@@ -7,7 +7,7 @@ function getComputerChoice() {
 
 function getPlayerChoice(choice) {
     choice = choice.toLowerCase();
-    if (choice in OPTIONS) {
+    if (OPTIONS.includes(choice)) {
         return choice;
     } else {
         return "";
@@ -16,6 +16,10 @@ function getPlayerChoice(choice) {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
-        console.log(`Draw! You both picked ${playerSelection}`);
-    } else if 
+        return `Draw! You both picked ${playerSelection}`;
+    }
+    if (playerSelection === "rock") {
+        if (computerSelection === "paper") return `You lose! ${computerSelection} beats ${playerSelection}`;
+        if (computerSelection === "scissors") return `You win! ${playerSelection} beats ${computerSelection}`;
+    }
 }
