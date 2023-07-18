@@ -1,7 +1,7 @@
 const OPTIONS = ["rock", "paper", "scissors"];
 
 function getComputerChoice() {
-    const choice = options[Math.floor(Math.random() * 3)];
+    const choice = OPTIONS[Math.floor(Math.random() * 3)];
     return choice;
 }
 
@@ -12,4 +12,10 @@ function getPlayerChoice(choice) {
     } else {
         return "";
     }
+}
+
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection === computerSelection) {
+        console.log(`Draw! You both picked ${playerSelection}`);
+    } else if 
 }
