@@ -66,9 +66,12 @@ function game() {
         }
         round++;
     }
-    if (playerScore > computerScore) console.log(`You won! Final score ${playerScore} X ${computerScore}`);
-    else if (playerScore < computerScore) console.log(`You lose! Final score ${playerScore} X ${computerScore}`);
-    else console.log(`It's a draw! Final score ${playerScore} X ${computerScore}`);
+    if (playerScore > computerScore) console.log(
+        `You won! Final score ${playerScore} X ${computerScore}`);
+    else if (playerScore < computerScore) console.log(
+        `You lose! Final score ${playerScore} X ${computerScore}`);
+    else console.log(
+        `It's a draw! Final score ${playerScore} X ${computerScore}`);
 }
 
 const playButton = document.getElementById("play");
