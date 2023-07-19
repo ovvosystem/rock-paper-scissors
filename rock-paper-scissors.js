@@ -8,6 +8,11 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice(choice) {
+    /*
+    Checks if the player's input is a valid choice
+    If it is, returns a standardized version of the choice
+    Otherwise, returns an empty string
+    */
     choice = choice.toLowerCase();
     if (OPTIONS.includes(choice)) {
         return choice;
@@ -53,6 +58,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
+    // Plays five rounds of Rock, Paper, Scissors and keeps track of the score
     let playerSelection, computerSelection;
     let round = 1;
     while (round <= 5) {
@@ -66,6 +72,7 @@ function game() {
         }
         round++;
     }
+    // Logs winner and the final score
     if (playerScore > computerScore) console.log(
         `You won! Final score ${playerScore} X ${computerScore}`);
     else if (playerScore < computerScore) console.log(
@@ -74,5 +81,6 @@ function game() {
         `It's a draw! Final score ${playerScore} X ${computerScore}`);
 }
 
+// Start a game when the button is pressed
 const playButton = document.getElementById("play");
 playButton.addEventListener("click", game);
