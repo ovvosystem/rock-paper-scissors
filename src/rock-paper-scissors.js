@@ -44,15 +44,17 @@ function playRound(playerChoice, computerChoice) {
     /* Gets result from function determineWin and increment the related
     score, then returns a string expressing the result of the round */
     const result = determineWin(playerChoice, computerChoice);
+    const capitalizedPlayerChoice = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1);
+    const capitalizedComputerChoice = computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1);
 
     if (result === 0) return `Draw! You both picked ${playerChoice}`;
     if (result === 1) {
         playerScore++;
-        return `You win! ${playerChoice} beats ${computerChoice}.`;
+        return `You win! ${capitalizedPlayerChoice} beats ${computerChoice}.`;
     }
     if (result === 2) {
         computerScore++;
-        return `You lose! ${computerChoice} beats ${playerChoice}.`;
+        return `You lose! ${capitalizedComputerChoice} beats ${playerChoice}.`;
     }
 }
 
