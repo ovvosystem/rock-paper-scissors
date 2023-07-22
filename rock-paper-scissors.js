@@ -23,12 +23,17 @@ function getPlayerChoice(choice) {
 
 function determineWin(playerSelection, computerSelection) {
     /* Moves are grabbed by their index, rock is equal to 0,
-    paper is equal to 1, and scissors is equal to 2. 
-    The winner is determined by the formula (move1 - move2) % 3, 
+    paper is equal to 1, and scissors is equal to 2. The winner 
+    is determined by the formula ((move1 - move2) % 3 + 3) % 3, 
     where 0 means a draw, 1 means move1 wins, and 2 means move2 wins */
+
+    /* Previously the formula used was (move1 - move2) % 3, but due
+    to a big on how the modulo is calculated in javascript, the result
+    sometimes was returned as a negative number */
+
     const playerIndex = OPTIONS.indexOf(playerSelection);
     const computerIndex = OPTIONS.indexOf(computerSelection);
-    return (playerIndex - computerIndex) % 3;
+    return ((playerIndex - computerIndex) % 3 + 3) % 3;
 }
 
 function playRound(playerSelection, computerSelection) {
