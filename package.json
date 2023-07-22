@@ -1,7 +1,7 @@
 {
   "name": "rock-paper-scissors",
   "version": "1.0.0",
-  "description": "This is a console rock paper scissors webgame, press the button, pick rock, paper or scissors, and then press f12 to open your console and see the results.",
+  "description": "A Rock, Paper, Scissors webapp",
   "main": "rock-paper-scissors.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
