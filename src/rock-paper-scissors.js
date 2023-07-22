@@ -1,10 +1,18 @@
+// Global DOM elements
+const container = document.getElementById("container");
+const results = document.getElementById("results");
+const choiceButtons = document.querySelectorAll(".rps-button");
+const roundResult = document.createElement("p");
+container.appendChild(roundResult);
+
+// Global variables
 const OPTIONS = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
-const choiceButtons = document.querySelectorAll(".rps-button");
+// Start game when clicking one of the buttons
 choiceButtons.forEach((choice) => {
-    choice.addEventListener("click", getPlayerChoice);
+    choice.addEventListener("click", game);
 });
 
 function getComputerChoice() {
@@ -48,26 +56,22 @@ function playRound(playerChoice, computerChoice) {
     }
 }
 
-function game() {
-    // Plays five rounds of Rock, Paper, Scissors
-    let playerChoice, computerChoice;
-    let round = 1;
-    while (round <= 5) {
-        computerChoice = getComputerChoice();
-        playerChoice = getPlayerChoice(prompt("Pick rock, paper or scissors"));
-        if (playerChoice) {
-            console.log(playRound(playerChoice, computerChoice));
-        } else {
-            console.log(`That is not a valid choice. Pick one of rock, paper or scissors.`);
-            continue;
-        }
-        round++;
+function game(event) {
+    results.textContent = `${playerScore} x ${computerScore}`;
+    const playerChoice = getPlayerChoice(event);
+    const computerChoice = getComputerChoice();
+
+    roundResult.textContent = playRound(playerChoice, computerChoice);
+
+    if (playerScore === 5) {
+        results.textContent = `Player wins! Final Score: ${playerScore} x ${computerScore}`;
+        playerScore = 0;
+        computerScore = 0;
+    } else if (computerScore === 5) {
+        results.textContent = `Computer wins! Final Score: ${playerScore} x ${computerScore}`;
+        playerScore = 0;
+        computerScore = 0;
+    } else {
+        results.textContent = `${playerScore} x ${computerScore}`;
     }
-    // Logs winner and the final score
-    if (playerScore > computerScore) console.log(
-        `You won! Final score ${playerScore} X ${computerScore}`);
-    else if (playerScore < computerScore) console.log(
-        `You lose! Final score ${playerScore} X ${computerScore}`);
-    else console.log(
-        `It's a draw! Final score ${playerScore} X ${computerScore}`);
 }
