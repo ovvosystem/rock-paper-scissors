@@ -6,15 +6,7 @@ html, body {
 .container {
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#play {
-    margin: auto;
-    width: 50%;
-    font-size: 60px;
-    padding: 20px;
-    background-color: #457ac0;
-    color: aliceblue;
 }
