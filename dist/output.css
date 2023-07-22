@@ -568,6 +568,14 @@ video {
   }
 }
 
+.m-6 {
+  margin: 1.5rem;
+}
+
+.m-8 {
+  margin: 2rem;
+}
+
 .flex {
   display: flex;
 }
@@ -588,9 +596,25 @@ video {
   justify-content: center;
 }
 
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-slate-700 {
+  --tw-text-opacity: 1;
+  color: rgb(51 65 85 / var(--tw-text-opacity));
+}
+
 html, body {
   height: 100%;
   margin: 0;
+  background-color: ivory;
 }
 
 .rps-button {
