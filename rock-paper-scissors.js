@@ -8,11 +8,9 @@ function getComputerChoice() {
 }
 
 function getPlayerChoice(choice) {
-    /*
-    Checks if the player's input is a valid choice
+    /* Checks if the player's input is a valid choice
     If it is, returns a standardized version of the choice
-    Otherwise, returns an empty string
-    */
+    Otherwise, returns an empty string */
     choice = choice.toLowerCase();
     if (OPTIONS.includes(choice)) {
         return choice;
@@ -22,7 +20,7 @@ function getPlayerChoice(choice) {
 }
 
 function determineWin(playerSelection, computerSelection) {
-    /* Moves are grabbed by their index, rock is equal to 0,
+    /* Moves are represented by their indexes, rock is equal to 0,
     paper is equal to 1, and scissors is equal to 2. The winner 
     is determined by the formula ((move1 - move2) % 3 + 3) % 3, 
     where 0 means a draw, 1 means move1 wins, and 2 means move2 wins */
@@ -37,8 +35,8 @@ function determineWin(playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection, computerSelection) {
-    /* Get result from function determineWin and increment the related
-    score, then return a string expressing the result of the round */
+    /* Gets result from function determineWin and increment the related
+    score, then returns a string expressing the result of the round */
     const result = determineWin(playerSelection, computerSelection);
 
     if (result === 0) return `Draw! You both picked ${playerSelection}`;
@@ -53,7 +51,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    // Plays five rounds of Rock, Paper, Scissors and keeps track of the score
+    // Plays five rounds of Rock, Paper, Scissors
     let playerSelection, computerSelection;
     let round = 1;
     while (round <= 5) {
