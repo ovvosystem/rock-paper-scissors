@@ -73,7 +73,3 @@ function game() {
     else console.log(
         `It's a draw! Final score ${playerScore} X ${computerScore}`);
 }
-
-// Start a game when the button is pressed
-const playButton = document.getElementById("play");
-playButton.addEventListener("click", game);
