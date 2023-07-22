@@ -62,6 +62,9 @@ function game(event) {
     const computerChoice = getComputerChoice();
 
     roundResult.textContent = playRound(playerChoice, computerChoice);
+    if (!roundResult.getAttribute("class")) {
+        roundResult.setAttribute("class", "round-result")
+    }
 
     if (playerScore === 5) {
         results.textContent = `Player wins! Final Score: ${playerScore} x ${computerScore}`;
