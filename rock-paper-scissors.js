@@ -21,6 +21,16 @@ function getPlayerChoice(choice) {
     }
 }
 
+function determineWin(playerSelection, computerSelection) {
+    /* Moves are grabbed by their index, rock is equal to 0,
+    paper is equal to 1, and scissors is equal to 2. 
+    The winner is determined by the formula (move1 - move2) % 3, 
+    where 0 means a draw, 1 means move1 wins, and 2 means move2 wins */
+    const playerIndex = OPTIONS.indexOf(playerSelection);
+    const computerIndex = OPTIONS.indexOf(computerSelection);
+    return (playerIndex - computerIndex) % 3;
+}
+
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         return `Draw! You both picked ${playerSelection}`;
