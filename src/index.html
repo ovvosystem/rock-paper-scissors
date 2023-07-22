@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock, Paper, Scissors!</title>
+        <script src="rock-paper-scissors.js" defer></script>
+        <link rel="stylesheet" href="../dist/output.css">
+    </head>
+    <body>
+        <div id="container" class="flex flex-col justify-center items-center h-screen">
+            <div id="results" class="m-8 text-center text-8xl text-slate-700 font-semibold">0 x 0</div>
+            <div id="button-container">
+                <button id="rock" class="rps-button">
+                    <div class="flex flex-col justify-center items-center">
+                        <p class="m-6 text-8xl">&#9994</p>
+                        <p class="text-2xl">ROCK</p>
+                    </div>
+                </button>
+                <button id="paper" class="rps-button">
+                    <div class="flex flex-col justify-center items-center">
+                        <p class="m-6 text-8xl">&#9995</p>
+                        <p class="text-2xl">PAPER</p>
+                    </div>
+                </button>
+                <button id="scissors" class="rps-button">
+                    <div class="flex flex-col justify-center items-center">
+                        <p class="m-6 text-8xl">&#9996</p>
+                        <p class="text-2xl">SCISSORS</p>
+                    </div>
+                </button>
+            </div>
+            <p id="round-result"></p>
+        </div>
+    </body>
+</html>
