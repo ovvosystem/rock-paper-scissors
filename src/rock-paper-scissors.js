@@ -59,11 +59,16 @@ function playRound(playerChoice, computerChoice) {
 }
 
 function game(event) {
+    /* Plays rounds in a best of five, then displays the results */
     results.textContent = `${playerScore} x ${computerScore}`;
     const playerChoice = getPlayerChoice(event);
     const computerChoice = getComputerChoice();
 
     roundResult.textContent = playRound(playerChoice, computerChoice);
+
+    /* Sets class for styling the first time roundResult.textContent is changed. 
+    Setting the class on the html itself prior to the textContent causes some of 
+    the css for the text to not be displayed correctly */
     if (!roundResult.getAttribute("class")) {
         roundResult.setAttribute("class", "round-result")
     }
