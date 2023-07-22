@@ -37,38 +37,18 @@ function determineWin(playerSelection, computerSelection) {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection === computerSelection) {
-        return `Draw! You both picked ${playerSelection}`;
+    /* Get result from function determineWin and increment the related
+    score, then return a string expressing the result of the round */
+    const result = determineWin(playerSelection, computerSelection);
+
+    if (result === 0) return `Draw! You both picked ${playerSelection}`;
+    if (result === 1) {
+        playerScore++;
+        return `You win! ${playerSelection} beats ${computerSelection}.`;
     }
-    if (playerSelection === "rock") {
-        if (computerSelection === "paper") {
-            computerScore++;
-            return `You lose! ${computerSelection} beats ${playerSelection}.`;
-        };
-        if (computerSelection === "scissors") {
-            playerScore++;
-            return `You win! ${playerSelection} beats ${computerSelection}.`;
-        }
-    }
-    if (playerSelection === "paper") {
-        if (computerSelection === "scissors") {
-            computerScore++;
-            return `You lose! ${computerSelection} beats ${playerSelection}.`;
-        }
-        if (computerSelection === "rock") {
-            playerScore++;
-            return `You win! ${playerSelection} beats ${computerSelection}.`;
-        }
-    }
-    if (playerSelection === "scissors") {
-        if (computerSelection === "rock") {
-            computerScore++;
-            return `You lose! ${computerSelection} beats ${playerSelection}.`;
-        }
-        if (computerSelection === "paper") {
-            playerScore++;
-            return `You win! ${playerSelection} beats ${computerSelection}.`;
-        }
+    if (result === 2) {
+        computerScore++;
+        return `You lose! ${computerSelection} beats ${playerSelection}.`;
     }
 }
 
