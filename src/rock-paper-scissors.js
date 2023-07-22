@@ -2,21 +2,19 @@ const OPTIONS = ["rock", "paper", "scissors"];
 let playerScore = 0;
 let computerScore = 0;
 
+const choiceButtons = document.querySelectorAll(".rps-button");
+choiceButtons.forEach((choice) => {
+    choice.addEventListener("click", getPlayerChoice);
+});
+
 function getComputerChoice() {
     const choice = OPTIONS[Math.floor(Math.random() * 3)];
     return choice;
 }
 
-function getPlayerChoice(choice) {
-    /* Checks if the player's input is a valid choice
-    If it is, returns a standardized version of the choice
-    Otherwise, returns an empty string */
-    choice = choice.toLowerCase();
-    if (OPTIONS.includes(choice)) {
-        return choice;
-    } else {
-        return "";
-    }
+function getPlayerChoice(event) {
+    const choice= event.currentTarget.getAttribute("id");
+    return choice;
 }
 
 function determineWin(playerSelection, computerSelection) {
