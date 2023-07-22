@@ -26,7 +26,7 @@ function determineWin(playerSelection, computerSelection) {
     where 0 means a draw, 1 means move1 wins, and 2 means move2 wins */
 
     /* Previously the formula used was (move1 - move2) % 3, but due
-    to a big on how the modulo is calculated in javascript, the result
+    to a bug on how the modulo is calculated in javascript, the result
     sometimes was returned as a negative number */
 
     const playerIndex = OPTIONS.indexOf(playerSelection);
